@@ -12,28 +12,27 @@ const STORE =[
 
 function generateItemElement(item, itemIndex, template) {
   return `
-   <li class = "js-item-index-element" data-item-index="${itemIndex}">
-   <span class="shopping-item js-shopping-item ${item.checked ?
-    "shopping-item__checked":''}>${item.name}</span>
+  <li class = "js-item-index-element"
+  data-item-index="${itemIndex}">
+    <span class="shopping-item js-shopping-item ${item.checked ? 'shopping-item__checked' : ''}">${item.name}</span>
     <div class="shopping-item-controls">
-    <button class="shopping-item-toggle js-item-toggle">
-    <span class="button-label">check</span>
-    </button>
-    <button class="shopping-item-delete js-item-delete">
-      <span class="button-label">delete</span>
+      <button class="shopping-item-toggle js-item-toggle">
+        <span class="button-label">check</span>
       </button>
-      </div>
-      </li>
+      <button class="shopping-item-delete js-item-delete">
+        <span class="button-label">delete</span>
+      </button>
+    </div>
+  </li>
   `;
 }
-// 
+
 // make a string of shopping list items
 
 function generateShoppingItemsString(shoppingList){
   console.log("Generating Shopping list element");
   
   const items = shoppingList.map((item, index) => generateItemElement(item, index));
-
   return items.join('');
 }
 
