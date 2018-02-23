@@ -1,0 +1,1 @@
+Working on the shopping list and application architecture.
