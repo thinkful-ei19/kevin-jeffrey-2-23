@@ -1,3 +1,5 @@
+'use strict';
+
 const STORE =[
   {name:"apples",checked:false},
   {name:"oranges",checked:false},
@@ -5,24 +7,35 @@ const STORE =[
   {name:"bread",checked:false}
 
 ];
-//okay
 
-function generateShoppingItemsString(shoppingList){
-  console.log("Generating Shopping list element");
+// dynamically create items for shopping list
+
+function generateItemElement(item, itemIndex, template) {
   return `
-  <li>apples</li>
-  <li>oranges</li>
-  <li>milk</li>
-  <li>bread</li>
+    <li>${item.name}</li>
   `;
 }
 
+// make a string of shopping list items
 
-// render shopping list function
+function generateShoppingItemsString(shoppingList){
+  console.log("Generating Shopping list element");
+  
+  const items = shoppingList.map((item, index) => generateItemElement(item, index));
+
+  return items.join('');
+}
+
+
+// render shopping list function to the DOM
 
 function renderShoppingList() {
 
   console.log('`renderShoppingList` ran');
+
+  const shoppingListItemsString = generateShoppingItemsString(STORE);
+  // insert that HTML into the DOM
+  $('.js-shopping-list').html(shoppingListItemsString);
 }
 
 // create new item on shopping list 
