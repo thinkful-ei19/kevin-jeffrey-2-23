@@ -1,8 +1,11 @@
+
+'use strict';
+
 const STORE =[
   {name:"apples",checked:false},
   {name:"oranges",checked:false},
   {name:"milk",checked:true},
-  {name:"bread",checked:false}
+  {name:"bread",checked:false},
 
 ]
 
@@ -11,8 +14,12 @@ const STORE =[
 // render shopping list function
 
 function renderShoppingList() {
-
+  // render the shopping list in the DOM
   console.log('`renderShoppingList` ran');
+  const shoppingListItemsString = '<li>apples</li>';
+
+  // insert that HTML into the DOM
+  $('.js-shopping-list').html(shoppingListItemsString);
 }
 
 // create new item on shopping list 
