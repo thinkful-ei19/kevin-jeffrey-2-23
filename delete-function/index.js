@@ -1,25 +1,28 @@
-
-'use strict';
-
 const STORE =[
   {name:"apples",checked:false},
   {name:"oranges",checked:false},
   {name:"milk",checked:true},
-  {name:"bread",checked:false},
+  {name:"bread",checked:false}
 
-]
+];
+//okay
 
-// test comment
+function generateShoppingItemsString(shoppingList){
+  console.log("Generating Shopping list element");
+  return `
+  <li>apples</li>
+  <li>oranges</li>
+  <li>milk</li>
+  <li>bread</li>
+  `;
+}
+
 
 // render shopping list function
 
 function renderShoppingList() {
-  // render the shopping list in the DOM
-  console.log('`renderShoppingList` ran');
-  const shoppingListItemsString = '<li>apples</li>';
 
-  // insert that HTML into the DOM
-  $('.js-shopping-list').html(shoppingListItemsString);
+  console.log('`renderShoppingList` ran');
 }
 
 // create new item on shopping list 
